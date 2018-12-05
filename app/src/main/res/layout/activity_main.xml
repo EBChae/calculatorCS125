@@ -13,14 +13,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number|numberSigned|numberDecimal"
-        android:text="enter" />
+        android:text="gravity" />
 
     <Button
-        android:id="@+id/calculate"
+        android:id="@+id/calculateBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="buttonOnClick"
-        android:text="calculate" />
+        android:text="Calculate" />
 
     <TextView
         android:id="@+id/outputBox1"
@@ -28,9 +28,41 @@
         android:layout_height="wrap_content"
         android:text="Press Calculate" />
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-------------------------------------------------------------------------------------" />
+
+    <Button
+        android:id="@+id/equation1Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ΔX = ((v0 + vf)/2)t" />
+
+    <Button
+        android:id="@+id/equation2Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vf = v0 + at" />
+
+    <Button
+        android:id="@+id/equation3Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ΔX = v0*t + (1/2)at^2" />
+
+    <Button
+        android:id="@+id/equation4Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="vf^2 = v0^2 + 2aΔX" />
+
     <Button
         android:id="@+id/graphButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonOnClick"
         android:text="Show Grpah" />
+
 </LinearLayout>

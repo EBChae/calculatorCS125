@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".Grpah" />
         <activity android:name=".Graph"></activity>
+        <activity android:name=".Equation" />
     </application>
 
 </manifest>
