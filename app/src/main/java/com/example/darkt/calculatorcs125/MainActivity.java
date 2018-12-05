@@ -27,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+        Button eq1 = (Button) findViewById(R.id.equation1Btn);
+        eq1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), Equation.class);
+                startActivity(startIntent);
+            }
+        });
     }
     public void buttonOnClick(View v) {
         Button calculate = (Button) v;
