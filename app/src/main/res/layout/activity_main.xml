@@ -38,6 +38,7 @@
         android:id="@+id/equation1Btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="buttonOnClick"
         android:text="ΔX = ((v0 + vf)/2)t" />
 
     <Button
