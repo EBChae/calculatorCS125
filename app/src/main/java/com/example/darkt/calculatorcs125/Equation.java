@@ -13,7 +13,7 @@ public class Equation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equation1);
 
-        Button mainBtn = (Button) findViewById(R.id.initialScreen);
+        Button mainBtn = (Button) findViewById(R.id.calculateBtn);
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

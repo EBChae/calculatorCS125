@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="Null"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="Null"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <EditText
+        android:id="@+id/editText9"
+        android:layout_width="174dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="Null"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <EditText
+        android:id="@+id/editText13"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="Null"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="286dp" />
+
+    <EditText
+        android:id="@+id/formulaFound3"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="ΔX = v0*t + (1/2)at^2"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="107dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Δx"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="83dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="107dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="v0"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="147dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="107dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="vf"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="214dp" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="107dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="t"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="278dp" />
+</android.support.constraint.ConstraintLayout>
