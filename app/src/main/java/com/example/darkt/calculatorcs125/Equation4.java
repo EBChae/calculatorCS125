@@ -61,7 +61,7 @@ public class Equation4 extends AppCompatActivity {
                 double convVF = Double.parseDouble(vf);
                 double convA = Double.parseDouble(a);
                 double convD = Double.parseDouble(d);
-                double convVI = Math.sqrt(2 * convA * convD) - convVF * convVF;
+                double convVI = Math.sqrt(convVF * convVF - 2 * convA * convD);
                 return String.format("%.3f", convVI);
 
             } else if (d.equals("")) {

@@ -19,16 +19,29 @@ public class Graph1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equation1graph);
 
-        double y,x;
-        x = -5.0;
+        Intent intent = getIntent();
+        double vi, vf, t, d, a;
 
+        vi = Double.valueOf(intent.getStringExtra("vi"));
+        vf = Double.valueOf(intent.getStringExtra("vf"));
+        t = Double.valueOf(intent.getStringExtra("t"));
+        d = Double.valueOf(intent.getStringExtra("d"));
+        a = (vf - vi) / t;
+        double max = t;
+
+        double x = 0;
+        double y;
         GraphView graph = (GraphView) findViewById(R.id.graph1);
         series = new LineGraphSeries<DataPoint>();
-        for (int i = 0; i < 500; i++) {
-            x += 0.1;
-            y = Math.sin(x);
-            series.appendData(new DataPoint(x, y), true, 500);
+        graph.getViewport().setXAxisBoundsManual(true);
+
+        for (int i = 0; i < t * 100; i++) {
+            x += 0.01;
+            y = vi * x + 0.5 * a * x * x;
+            series.appendData(new DataPoint(x, y), true, (int)t * 100);
         }
+        graph.getViewport().setMinX(0);
+        graph.getViewport().setMaxX(max);
         graph.addSeries(series);
         Button mainBtn = (Button) findViewById(R.id.MainButton1);
         mainBtn.setOnClickListener(new View.OnClickListener() {
