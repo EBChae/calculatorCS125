@@ -7,26 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/inputBox1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:text="gravity" />
 
-    <Button
-        android:id="@+id/calculateBtn1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonOnClick"
-        android:text="Calculate" />
+
+
 
     <TextView
         android:id="@+id/outputBox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Press Calculate"
+        android:text="HIHIHI Calculate"
         android:textSize="30sp" />
 
     <TextView
@@ -59,12 +48,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="vf^2 = v0^2 + 2aΔX" />
-
-    <Button
-        android:id="@+id/graphButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="buttonOnClick"
-        android:text="Show Grpah" />
 
 </LinearLayout>
