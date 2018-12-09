@@ -22,7 +22,7 @@ public class Graph1 extends AppCompatActivity {
         double y,x;
         x = -5.0;
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
+        GraphView graph = (GraphView) findViewById(R.id.graph1);
         series = new LineGraphSeries<DataPoint>();
         for (int i = 0; i < 500; i++) {
             x += 0.1;
@@ -34,7 +34,7 @@ public class Graph1 extends AppCompatActivity {
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent startIntent = new Intent(getApplicationContext(), Equation1.class);
                 startActivity(startIntent);
             }
         });
