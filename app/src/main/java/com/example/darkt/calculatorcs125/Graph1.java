@@ -17,7 +17,7 @@ public class Graph1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_graph);
+        setContentView(R.layout.activity_equation1graph);
 
         double y,x;
         x = -5.0;
