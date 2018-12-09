@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Equation3 extends AppCompatActivity {
-
+    private Kinematics kin3 = new Kinematics();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,64 +29,33 @@ public class Equation3 extends AppCompatActivity {
         graphBt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), Graph3.class);
-                startActivity(startIntent);
+                if (!(Double.parseDouble(kin3.getTim()) < 0)) {
+                    Intent startIntent = new Intent(Equation3.this, Graph1.class);
+                    startIntent.putExtra("vi", kin3.getVi());
+                    startIntent.putExtra("t", kin3.getTim());
+                    startIntent.putExtra("a", kin3.getAcc());
+                    startActivity(startIntent);
+                } else {
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
+                    toast.makeText(Equation3.this, "Time can not be negative.", toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
     public void eqnCalc3Btn(View v) {
-        String displacement = ((EditText)findViewById(R.id.getX3)).getText().toString();
-        String initialVelocity = ((EditText)findViewById(R.id.getvInitial3)).getText().toString();
-        String acceleration = ((EditText)findViewById(R.id.getA3)).getText().toString();
-        String time = ((EditText)findViewById(R.id.getTime3)).getText().toString();
+        String displacement = ((EditText) findViewById(R.id.getX3)).getText().toString();
+        String initialVelocity = ((EditText) findViewById(R.id.getvInitial3)).getText().toString();
+        String acceleration = ((EditText) findViewById(R.id.getA3)).getText().toString();
+        String time = ((EditText) findViewById(R.id.getTime3)).getText().toString();
 
-        String calculated = kinematics(displacement, initialVelocity, acceleration, time);
+        String calculated = kin3.kinematics3(initialVelocity, displacement, time, acceleration);
+
         TextView output = findViewById(R.id.answerFound3);
         output.setText(calculated);
 
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.TOP | Gravity.START, 0 , 0);
-        toast.makeText(Equation3.this, "Done", toast.LENGTH_SHORT).show();
-    }
-    public String kinematics(String d, String vi, String a, String t) {
-        try {
-            if (vi.equals("")) {
-                double convD = Double.parseDouble(d);
-                double convA = Double.parseDouble(a);
-                double convT = Double.parseDouble(t);
-                double convVI = (convD - 0.5 * convA * Math.pow(convT, 2)) / convT;
-                return String.format("%.3f", convVI);
-
-            } else if (d.equals("")) {
-                double convVI = Double.parseDouble(vi);
-                double convA = Double.parseDouble(a);
-                double convT = Double.parseDouble(t);
-                double convD = 0.5 * convA * Math.pow(convT, 2) + convVI * convT;
-                return String.format("%.3f", convD);
-
-            } else if (a.equals("")) {
-                double convD = Double.parseDouble(d);
-                double convVI = Double.parseDouble(vi);
-                double convT = Double.parseDouble(t);
-                double convA = 2 * (convD - convVI * convT) / Math.pow(convT, 2);
-                return String.format("%.3f", convA);
-
-            } else if (t.equals("")) {
-                double convD = Double.parseDouble(d);
-                double convVI = Double.parseDouble(vi);
-                double convA = Double.parseDouble(a);
-                double convT;
-                if ((-1 * convVI + Math.sqrt(convVI * convVI + 2 * convA * convD)) / convA > 0) {
-                    convT = -1 * convVI + Math.sqrt(convVI * convVI + 2 * convA * convD);
-                } else {
-                    convT = -1 * convVI - Math.sqrt(convVI * convVI + 2 * convA * convD) / convA;
-                }
-                return String.format("%.3f", convT);
-            } else {
-                return "Only one variable must be empty.";
-            }
-        } catch (Exception e) {
-            return "Invalid Calculation";
-        }
+        toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
+        toast.makeText(Equation3.this, kin3.getSuccessful(), toast.LENGTH_SHORT).show();
     }
 }

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Equation4 extends AppCompatActivity {
-
+    private Kinematics kin4 = new Kinematics();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +29,17 @@ public class Equation4 extends AppCompatActivity {
         graphBt4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), Graph4.class);
-                startActivity(startIntent);
+                if (!(Double.parseDouble(kin4.getTim()) < 0)) {
+                    Intent startIntent = new Intent(Equation4.this, Graph1.class);
+                    startIntent.putExtra("vi", kin4.getVi());
+                    startIntent.putExtra("t", kin4.getTim());
+                    startIntent.putExtra("a", kin4.getAcc());
+                    startActivity(startIntent);
+                } else {
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
+                    toast.makeText(Equation4.this, "Time can not be negative.", toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -40,48 +49,13 @@ public class Equation4 extends AppCompatActivity {
         String finalVelocity = ((EditText)findViewById(R.id.getvFinal4)).getText().toString();
         String acceleration = ((EditText)findViewById(R.id.getA4)).getText().toString();
 
-        String calculated = kinematics(displacement, initialVelocity, finalVelocity, acceleration);
+        String calculated = kin4.kinematics4(initialVelocity, finalVelocity, displacement, acceleration);
+
         TextView output = findViewById(R.id.answerFound4);
         output.setText(calculated);
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.TOP | Gravity.START, 0 , 0);
-        toast.makeText(Equation4.this, "Done", toast.LENGTH_SHORT).show();
-    }
-    public String kinematics(String d, String vi, String vf, String a) {
-        try {
-            if (vf.equals("")) {
-                double convD = Double.parseDouble(d);
-                double convA = Double.parseDouble(a);
-                double convVI = Double.parseDouble(vi);
-                double convVF = Math.sqrt(convVI * convVI + 2 * convA * convD);
-                return String.format("%.3f", convVF);
-
-            } else if (vi.equals("")) {
-                double convVF = Double.parseDouble(vf);
-                double convA = Double.parseDouble(a);
-                double convD = Double.parseDouble(d);
-                double convVI = Math.sqrt(convVF * convVF - 2 * convA * convD);
-                return String.format("%.3f", convVI);
-
-            } else if (d.equals("")) {
-                double convVI = Double.parseDouble(vi);
-                double convVF = Double.parseDouble(vf);
-                double convA = Double.parseDouble(a);
-                double convD = Math.pow(convVF, 2) - Math.pow(convVI, 2) / (2 * convA);
-                return String.format("%.3f", convD);
-
-            } else if (a.equals("")) {
-                double convD = Double.parseDouble(d);
-                double convVI = Double.parseDouble(vi);
-                double convVF = Double.parseDouble(vf);
-                double convA = (Math.pow(convVF, 2) - Math.pow(convVI, 2)) / (2 * convD);
-                return String.format("%.3f", convA);
-            } else {
-                return "Only one variable must be empty.";
-            }
-        } catch (Exception e) {
-            return "Invalid Calculation";
-        }
+        toast.makeText(Equation4.this, kin4.getSuccessful(), toast.LENGTH_SHORT).show();
     }
 }

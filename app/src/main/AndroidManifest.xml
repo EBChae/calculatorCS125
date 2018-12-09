@@ -23,9 +23,6 @@
         <activity android:name=".Equation4" />
         <activity android:name=".Equation3" />
         <activity android:name=".Graph1" />
-        <activity android:name=".Graph2" />
-        <activity android:name=".Graph3" />
-        <activity android:name=".Graph4" />
     </application>
 
 </manifest>

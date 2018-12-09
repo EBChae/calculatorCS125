@@ -9,9 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-public class Equation1 extends AppCompatActivity {
-    private String iVel, fVel, tim, dis;
 
+public class Equation1 extends AppCompatActivity {
+    private Kinematics kin1 = new Kinematics();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,20 +29,19 @@ public class Equation1 extends AppCompatActivity {
         graphBt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(Equation1.this, Graph1.class);
-                startIntent.putExtra("vi", iVel);
-                startIntent.putExtra("vf", fVel);
-                startIntent.putExtra("t", tim);
-                startIntent.putExtra("d", dis);
-                startActivity(startIntent);
+                if (!(Double.parseDouble(kin1.getTim()) < 0)) {
+                    Intent startIntent = new Intent(Equation1.this, Graph1.class);
+                    startIntent.putExtra("vi", kin1.getVi());
+                    startIntent.putExtra("t", kin1.getTim());
+                    startIntent.putExtra("a", kin1.getAcc());
+                    startActivity(startIntent);
+                } else {
+                    Toast toast = new Toast(getApplicationContext());
+                    toast.setGravity(Gravity.TOP | Gravity.START, 0, 0);
+                    toast.makeText(Equation1.this, "Time can not be negative.", toast.LENGTH_SHORT).show();
+                }
             }
         });
-    }
-    public void transfer(String vi, String vf, String d, String t) {
-        iVel = vi;
-        fVel = vf;
-        tim = t;
-        dis = d;
     }
     public void eqnCalc1Btn(View v) {
         String initialVelocity = ((EditText)findViewById(R.id.getvInitial)).getText().toString();
@@ -50,52 +49,13 @@ public class Equation1 extends AppCompatActivity {
         String time = ((EditText)findViewById(R.id.getTime)).getText().toString();
         String displacement = ((EditText)findViewById(R.id.getX)).getText().toString();
 
-        String calculated = kinematics(initialVelocity, finalVelocity, time, displacement);
+        String answer = kin1.kinematics1(initialVelocity, finalVelocity, displacement, time);
+
         TextView output = findViewById(R.id.answerFound1);
-        output.setText(calculated);
+        output.setText(answer);
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.TOP | Gravity.START, 0 , 0);
-        toast.makeText(Equation1.this, "Done", toast.LENGTH_SHORT).show();
-    }
-    public String kinematics(String vi, String vf, String t, String d) {
-        try {
-            if (vf.equals("")) {
-                double convVI = Double.parseDouble(vi);
-                double convD = Double.parseDouble(d);
-                double convT = Double.parseDouble(t);
-                double convVF = 2 * convD / convT - convVI;
-                transfer(""+convVI, ""+convD, ""+convD, ""+convT);
-                return String.format("%.3f", convVF);
-
-            } else if (vi.equals("")) {
-                double convVF = Double.parseDouble(vf);
-                double convD = Double.parseDouble(d);
-                double convT = Double.parseDouble(t);
-                double convVI = 2 * convD / convT - convVF;
-                transfer(""+convVI, ""+convD, ""+convD, ""+convT);
-                return String.format("%.3f", convVI);
-
-            } else if (d.equals("")) {
-                double convVF = Double.parseDouble(vf);
-                double convVI = Double.parseDouble(vi);
-                double convT = Double.parseDouble(t);
-                double convD = (convVI + convVF) / 2 * convT;
-                transfer(""+convVI, ""+convD, ""+convD, ""+convT);
-                return String.format("%.3f", convD);
-
-            } else if (t.equals("")) {
-                double convVF = Double.parseDouble(vf);
-                double convVI = Double.parseDouble(vi);
-                double convD = Double.parseDouble(d);
-                double convT = 2 * convD / (convVI + convVF);
-                transfer(""+convVI, ""+convD, ""+convD, ""+convT);
-                return String.format("%.3f", convT);
-            } else {
-                return "Only one variable must be empty.";
-            }
-        } catch (Exception e) {
-            return "Invalid Calculation";
-        }
+        toast.makeText(Equation1.this, kin1.getSuccessful(), toast.LENGTH_SHORT).show();
     }
 }
