@@ -50,35 +50,39 @@ public class Equation1 extends AppCompatActivity {
         toast.makeText(Equation1.this, "calculated", toast.LENGTH_SHORT).show();
     }
     public String kinematics(String vi, String vf, String t, String d) {
-        if (vf.equals("")) {
-            double convVI = Double.parseDouble(vi);
-            double convD = Double.parseDouble(d);
-            double convT = Double.parseDouble(t);
-            double convVF = 2 * convD / convT - convVI;
-            return String.format("%.3f", convVF);
+        try {
+            if (vf.equals("")) {
+                double convVI = Double.parseDouble(vi);
+                double convD = Double.parseDouble(d);
+                double convT = Double.parseDouble(t);
+                double convVF = 2 * convD / convT - convVI;
+                return String.format("%.3f", convVF);
 
-        } else if (vi.equals("")) {
-            double convVF = Double.parseDouble(vf);
-            double convD = Double.parseDouble(d);
-            double convT = Double.parseDouble(t);
-            double convVI = 2 * convD / convT - convVF;
-            return String.format("%.3f", convVI);
+            } else if (vi.equals("")) {
+                double convVF = Double.parseDouble(vf);
+                double convD = Double.parseDouble(d);
+                double convT = Double.parseDouble(t);
+                double convVI = 2 * convD / convT - convVF;
+                return String.format("%.3f", convVI);
 
-        } else if (d.equals("")) {
-            double convVF = Double.parseDouble(vf);
-            double convVI = Double.parseDouble(vi);
-            double convT = Double.parseDouble(t);
-            double convD = (convVI + convVF) / 2 * convT;
-            return String.format("%.3f", convD);
+            } else if (d.equals("")) {
+                double convVF = Double.parseDouble(vf);
+                double convVI = Double.parseDouble(vi);
+                double convT = Double.parseDouble(t);
+                double convD = (convVI + convVF) / 2 * convT;
+                return String.format("%.3f", convD);
 
-        } else if (t.equals("")) {
-            double convVF = Double.parseDouble(vf);
-            double convVI = Double.parseDouble(vi);
-            double convD = Double.parseDouble(d);
-            double convT = 2 * convD / (convVI + convVF);
-            return String.format("%.3f", convT);
-        } else {
-            return "Only one variable must be empty.";
+            } else if (t.equals("")) {
+                double convVF = Double.parseDouble(vf);
+                double convVI = Double.parseDouble(vi);
+                double convD = Double.parseDouble(d);
+                double convT = 2 * convD / (convVI + convVF);
+                return String.format("%.3f", convT);
+            } else {
+                return "Only one variable must be empty.";
+            }
+        } catch (Exception e) {
+            return "Invalid Calculation";
         }
     }
 }
