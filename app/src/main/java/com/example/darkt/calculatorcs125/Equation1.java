@@ -47,7 +47,7 @@ public class Equation1 extends AppCompatActivity {
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.TOP | Gravity.LEFT, 0 , 0);
-        toast.makeText(Equation1.this, "calculated", toast.LENGTH_SHORT).show();
+        toast.makeText(Equation1.this, "Done", toast.LENGTH_SHORT).show();
     }
     public String kinematics(String vi, String vf, String t, String d) {
         try {
