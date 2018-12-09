@@ -17,7 +17,7 @@ public class Equation3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equation3);
 
-        Button mainBtn = (Button) findViewById(R.id.backBtn3);
+        Button mainBtn = findViewById(R.id.backBtn3);
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +25,7 @@ public class Equation3 extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-        Button graphBt3 = (Button) findViewById(R.id.graphBtn3);
+        Button graphBt3 = findViewById(R.id.graphBtn3);
         graphBt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,13 +40,12 @@ public class Equation3 extends AppCompatActivity {
         String acceleration = ((EditText)findViewById(R.id.getA3)).getText().toString();
         String time = ((EditText)findViewById(R.id.getTime3)).getText().toString();
 
-        Button calculate = (Button) v;
         String calculated = kinematics(displacement, initialVelocity, acceleration, time);
-        TextView output = (TextView) findViewById(R.id.answerFound3);
+        TextView output = findViewById(R.id.answerFound3);
         output.setText(calculated);
 
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.TOP | Gravity.LEFT, 0 , 0);
+        toast.setGravity(Gravity.TOP | Gravity.START, 0 , 0);
         toast.makeText(Equation3.this, "Done", toast.LENGTH_SHORT).show();
     }
     public String kinematics(String d, String vi, String a, String t) {
@@ -76,7 +75,7 @@ public class Equation3 extends AppCompatActivity {
                 double convD = Double.parseDouble(d);
                 double convVI = Double.parseDouble(vi);
                 double convA = Double.parseDouble(a);
-                double convT = 0.0;
+                double convT;
                 if ((-1 * convVI + Math.sqrt(convVI * convVI + 2 * convA * convD)) / convA > 0) {
                     convT = -1 * convVI + Math.sqrt(convVI * convVI + 2 * convA * convD);
                 } else {

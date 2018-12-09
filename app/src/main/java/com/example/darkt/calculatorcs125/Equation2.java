@@ -17,7 +17,7 @@ public class Equation2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equation2);
 
-        Button mainBtn = (Button) findViewById(R.id.backBtn2);
+        Button mainBtn = findViewById(R.id.backBtn2);
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,7 +25,7 @@ public class Equation2 extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
-        Button graphBt2 = (Button) findViewById(R.id.graphBtn2);
+        Button graphBt2 = findViewById(R.id.graphBtn2);
         graphBt2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,13 +40,12 @@ public class Equation2 extends AppCompatActivity {
         String finalVelocity = ((EditText)findViewById(R.id.getvFinal2)).getText().toString();
         String time = ((EditText)findViewById(R.id.getTime2)).getText().toString();
 
-        Button calculate = (Button) v;
         String calculated = kinematics(initialVelocity, finalVelocity, time, acceleration);
-        TextView output = (TextView) findViewById(R.id.answerFound2);
+        TextView output = findViewById(R.id.answerFound2);
         output.setText(calculated);
 
         Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.TOP | Gravity.LEFT, 0 , 0);
+        toast.setGravity(Gravity.TOP | Gravity.START, 0 , 0);
         toast.makeText(Equation2.this, "Done", toast.LENGTH_SHORT).show();
     }
     public String kinematics(String vi, String vf, String t, String a) {
