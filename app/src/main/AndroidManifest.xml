@@ -22,6 +22,7 @@
         <activity android:name=".Equation2" />
         <activity android:name=".Equation4" />
         <activity android:name=".Equation3" />
+        <activity android:name=".Graph1" />
     </application>
 
 </manifest>

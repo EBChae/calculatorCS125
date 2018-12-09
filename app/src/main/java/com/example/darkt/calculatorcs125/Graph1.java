@@ -30,7 +30,7 @@ public class Graph1 extends AppCompatActivity {
             series.appendData(new DataPoint(x, y), true, 500);
         }
         graph.addSeries(series);
-        Button mainBtn = (Button) findViewById(R.id.MainButton);
+        Button mainBtn = (Button) findViewById(R.id.MainButton1);
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
