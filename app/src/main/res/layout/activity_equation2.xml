@@ -6,93 +6,214 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/editText15"
-        android:layout_width="174dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Null"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="147dp" />
+    <TextView
+        android:id="@+id/answerFound2"
+        android:layout_width="251dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Answer:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
 
-    <EditText
-        android:id="@+id/editText23"
-        android:layout_width="174dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Null"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <EditText
-        android:id="@+id/editText18"
-        android:layout_width="174dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Null"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="214dp" />
-
-    <EditText
-        android:id="@+id/editText19"
-        android:layout_width="174dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Null"
-        tools:layout_editor_absoluteX="172dp"
-        tools:layout_editor_absoluteY="278dp" />
-
-    <EditText
-        android:id="@+id/editText14"
-        android:layout_width="107dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="vf"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="214dp" />
-
-    <EditText
-        android:id="@+id/editText20"
-        android:layout_width="107dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="a"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <EditText
-        android:id="@+id/editText21"
-        android:layout_width="107dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="v0"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="147dp" />
-
-    <EditText
-        android:id="@+id/timeBox"
-        android:layout_width="107dp"
+    <TextView
+        android:id="@+id/timeBox2"
+        android:layout_width="108dp"
         android:layout_height="51dp"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="t"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="278dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/getTime2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <TextView
+        android:id="@+id/vFinalBox2"
+        android:layout_width="108dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="vf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/getvFinal2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
+
+    <TextView
+        android:id="@+id/vInitialBox2"
+        android:layout_width="108dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="v0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/getvInitial2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322" />
+
+    <TextView
+        android:id="@+id/aBox2"
+        android:layout_width="108dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="a"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/getA2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="311dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="vf = v0 + at"
+        app:layout_constraintBottom_toBottomOf="@+id/calculateBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.018" />
+
+    <Button
+        android:id="@+id/graphBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="buttonOnClick"
+        android:text="Graph"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/calculateBtn2"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/formulaFound2"
-        android:layout_width="312dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/getA2"
+        android:layout_width="174dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
-        android:inputType="text"
-        android:text="vf = v0 + at"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165" />
+
+    <EditText
+        android:id="@+id/getvInitial2"
+        android:layout_width="174dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
+
+    <EditText
+        android:id="@+id/getvFinal2"
+        android:layout_width="174dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.472" />
+
+    <EditText
+        android:id="@+id/getTime2"
+        android:layout_width="174dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.907"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.639" />
+
+    <Button
+        android:id="@+id/calculateBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="buttonOnClick"
+        android:text="Calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.982" />
+
+    <Button
+        android:id="@+id/backBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="buttonOnClick"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/calculateBtn2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.982" />
+
 </android.support.constraint.ConstraintLayout>
