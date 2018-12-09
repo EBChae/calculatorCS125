@@ -25,6 +25,14 @@ public class Equation1 extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+//        Button graphBt1 = (Button) findViewById(R.id.graphBtn1);
+//        graphBt1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent startIntent = new Intent(getApplicationContext(), Graph1.class);
+//                startActivity(startIntent);
+//            }
+//        });
     }
     public void eqnCalc1Btn(View v) {
         String initialVelocity = ((EditText)findViewById(R.id.getvInitial)).getText().toString();
