@@ -21,5 +21,13 @@ public class Equation3 extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+        //        Button graphBt3 = (Button) findViewById(R.id.graphBtn3);
+//        graphBt3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent startIntent = new Intent(getApplicationContext(), Graph3.class);
+//                startActivity(startIntent);
+//            }
+//        });
     }
 }
