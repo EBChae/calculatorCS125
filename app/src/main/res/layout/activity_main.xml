@@ -8,21 +8,34 @@
     tools:context=".MainActivity">
 
 
-
-
-
     <TextView
         android:id="@+id/outputBox1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="HIHIHI Calculate"
+        android:gravity="center"
+        android:text="Kinematic Equation Calculator"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:text="*Displacement vs Time graph included" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="-------------------------------------------------------------------------------------" />
+        android:layout_height="33dp"
+        android:gravity="center"
+        android:text="___________________________________________" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:text="<Select an Equation>" />
 
     <Button
         android:id="@+id/equation1Btn"
@@ -48,5 +61,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="vf^2 = v0^2 + 2aΔX" />
+
+    <TextView
+        android:id="@+id/outputBox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/outputBox2"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:gravity="right|center"
+        android:text="Created by Earl Chae & Joshua Shin   "
+        android:textColor="@android:color/darker_gray"
+        android:textSize="15sp" />
 
 </LinearLayout>
