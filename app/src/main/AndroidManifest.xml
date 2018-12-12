@@ -16,8 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Grpah" />
-        <activity android:name=".Graph"></activity>
         <activity android:name=".Equation1" />
         <activity android:name=".Equation2" />
         <activity android:name=".Equation4" />

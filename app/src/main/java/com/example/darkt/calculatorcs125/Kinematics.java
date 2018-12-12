@@ -148,10 +148,15 @@ public class Kinematics {
                 d = Double.parseDouble(disp);
                 vi = Double.parseDouble(vInit);
                 a = Double.parseDouble(acc);
-                if ((-1 * vi + Math.sqrt(vi * vi + 2 * a * d)) / a > 0) {
-                    t = -1 * vi + Math.sqrt(vi * vi + 2 * a * d);
-                } else {
-                    t = -1 * vi - Math.sqrt(vi * vi + 2 * a * d) / a;
+                if (a == 0) {
+                    t = d / vi;
+                }
+                else {
+                    if ((-1 * vi + Math.sqrt(vi * vi + 2 * a * d)) / a > 0) {
+                        t = -1 * vi + Math.sqrt(vi * vi + 2 * a * d);
+                    } else {
+                        t = -1 * vi - Math.sqrt(vi * vi + 2 * a * d) / a;
+                    }
                 }
                 vf = vi + a * t;
                 successful = "successful";
